@@ -1,0 +1,23 @@
+<h2 align="center"> Login </h2>
+
+<table align="center">
+<tbody>
+
+<%= form_with scope: :session, url: login_path do |form|%>
+      
+    <tr>
+    <th><%= form.label :email %></th>
+        <td> <%= form.email_field :email, placeholder: "Enter your email address" %></td>
+    </tr>
+        
+    <tr>
+        <th><%= form.label :password%></th>
+        <td> <%= form.password_field :password, placeholder: "Enter your password" %></td>
+    </tr>
+   
+</tbody>
+    <tfoot>
+        <td> <%= form.submit "Log in"%></td>
+    </tfoot>
+<%end%>
+</table>

@@ -1,0 +1,66 @@
+<%= render 'shared/errors', obj: applicant%>
+<%= form_with model: applicant do |app| %>
+<table >
+<thead>
+<th>Employee Details</th>
+
+</thead>
+
+<tbody>
+
+        <th><%= app.label :First_name%><br></th>
+        <th><%= app.label :middle_name %><br></th>
+        <th><%= app.label :last_name %><br></th>
+    <tr>
+        <td><%= app.text_field :First_name %></td>
+    
+        <td><%= app.text_field :middle_name %> </td>
+        
+        <td><%= app.text_field :last_name%> </td>
+    
+    </tr>
+
+        <th><%= app.label :gender %><br></th>
+        <th><%= app.label :date_of_birth %></th>
+        <th><%= app.label :pan_number %><br></th>
+
+    <tr>
+        
+        <td><%= app.select :gender, [" ","Male", "Female"]%> </td>
+        <td><%= app.date_field :date_of_birth %> </td>
+        <td><%= app.text_field :pan_number %> </td>
+    </tr>
+    
+        <th><%= app.label :email%></th>
+        <th><%= app.label :mobile%></th>
+    <tr>
+        <td><%= app.email_field :email%><br></td>
+        <td> <%= app.telephone_field :mobile %> </td>
+    </tr>
+
+        <th><%= app.label :address1 %></th>
+        <th><%= app.label :address2 %></th>
+        <th><%= app.label :address3 %></th>
+
+    <tr>
+        <td><%= app.text_area :address1%></td>
+        <td><%= app.text_area :address2%></td>
+        <td><%= app.text_area :address3%></td>
+    </tr>
+
+        <th><%= app.label :country %><br></th>
+        <th><%= app.label :state %><br></th>
+        <th><%= app.label :pin_code %><br></th>
+    <tr>
+        
+        <td><%= app.text_field :country %> </td>
+        <td><%= app.select :state, ["","Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhatitsgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharastra", "Manipur","Tamil Nadu", "Telangana"] %> </td>
+        <td><%= app.text_field :pin_code %> </td>
+    </tr>
+    <tfoot align='center'>
+    <td> <%= app.submit %> </td></tfoot>
+    
+</tbody>
+    
+</table>
+<% end %>

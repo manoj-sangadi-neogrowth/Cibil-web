@@ -1,0 +1,33 @@
+<h2>Applicant details</h2>
+<p>
+    <div> 
+    <%="Name: "%>
+    <%= @applicant.First_name%>
+    <%= @applicant.middle_name%>
+    <%= @applicant.last_name%>
+    <br>
+    <%= "Gender :" %>
+    <%= @applicant.gender%><br>
+    <%= "Date of birth :"%>
+    <%= @applicant.date_of_birth%><br>
+    <%= "PAN number :"%>
+    <%= @applicant.pan_number%><br>
+    <%= "Mobile :" %>
+    <%= @applicant.mobile%><br>
+    <%= "Email :"%>
+    <%= @applicant.email%><br>
+    <%= "Country :"%>
+    <%= @applicant.country%><br>
+    <%= "State :"%>
+    <%= @applicant.state%><br>
+    <%= "Pin code : "%>
+    <%= @applicant.pin_code%><br>
+    </div>
+    
+</p>
+<%= link_to "Edit", edit_applicant_path%>
+<% link_to "Destroy", applicant_path(@applicant), method: :destroy%>
+<%= link_to "Destroy", applicant_path(@applicant), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>

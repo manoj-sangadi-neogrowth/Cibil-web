@@ -1,0 +1,31 @@
+<table align="center">
+<tbody>
+<%= render 'shared/errors', obj:@user%>
+<%= form_with model: @user do |form|%>
+    
+        <th><%= form.label :first_name%></th>
+        <th><%= form.label :last_name%></th>
+    <tr>
+
+        <td><%= form.text_field :first_name, placeholder: "Enter your first name" %></td>
+        <td><%= form.text_field :last_name, placeholder: "Enter your last name"%></td>
+    </tr>
+        
+        <th><%= form.label :date_of_birth %></th>
+        <th><%= form.label :mobile %></th>
+    <tr>
+        <td><%= form.date_field :date_of_birth%></td>
+        <td><%= form.telephone_field :mobile, placeholder: "Enter your mobile number" %></td>
+    </tr>
+        <th><%= form.label :email %></th>
+        <th><%= form.label :password%></th>
+    <tr>
+        <td> <%= form.email_field :email, placeholder: "Enter your email address" %></td>
+        <td> <%= form.password_field :password, placeholder: "choose your password" %></td>
+    </tr>
+    <tr align='center'> 
+        <td><%= form.submit(@user.new_record? ? "Signup" : "Update account")%></td>
+    </tr>
+    <%end%>
+</tbody>
+</table>

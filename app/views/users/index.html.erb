@@ -1,0 +1,27 @@
+<h1>Users</h1>
+<%= button_to "Add new", signup_path, method: :get%>
+
+<table>
+<th>First name </th>
+<th>Last name</th>
+<th> D.O.B</th>
+<th> Email </th>
+<th> Mobile </th>
+<th> Is_Active </th>
+<th>Actions</th>
+
+<tbody>
+<tr>
+<% @user.each do |u|%>
+<td> <%= u.first_name %></td>
+<td> <%= u.last_name %></td>
+<td> <%= u.date_of_birth %></td>
+<td> <%= u.email %></td>
+<td> <%= u.mobile %></td>
+<td> <%= u.is_active %></td>
+<td> <%= link_to "Edit", edit_user_path(u.id)%>
+<%= button_to "Destroy", user_path(u.id), method: :delete %></td>
+</tr>
+<% end %>
+</tbody>
+</table>

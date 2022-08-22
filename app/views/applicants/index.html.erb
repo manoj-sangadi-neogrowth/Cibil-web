@@ -1,0 +1,43 @@
+<h1>Applicants</h1>
+<h3><%= flash[:notice] %></h3>
+<%= button_to "Add new", new_applicant_path, method: :get%> 
+<%= button_to "Destroy", applicant_path(@applicants), method: :delete%>
+
+<table>
+<thead class="thead-dark">
+<th> </th>
+<th>First name</th>
+<th>Middle name</th>
+<th>Last name</th>
+<th>Gender</th>
+<th>Date of Birth</th>
+<th>Email</th>
+<th>Mobile</th>
+<th>Action</th>
+</thead>
+
+<tbody >
+
+<% @applicants.each do |applicant| %>
+<tr>
+<td><%= check_box_tag "applicant_ids[]", applicant.id, nil, { multiple: true}%></td>
+<td><%= applicant.First_name %></td>
+<td><%= applicant.middle_name %></td>
+<td><%= applicant.last_name %></td>
+<td><%= applicant.gender%></td>
+<td><%= applicant.date_of_birth%></td>
+<td><%= applicant.email %>
+<td><%=applicant.mobile%></td>
+<td><%= link_to "show", applicant_path(applicant.id)%>
+<br>
+<%= link_to "Edit", edit_applicant_path(applicant.id)%>
+<br>
+<%=  button_to "Destroy", applicant_path(applicant.id), method: :delete%> 
+</td>
+</tr>
+<%end%>
+
+
+</tbody>
+</table>
+
